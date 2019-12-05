@@ -1,0 +1,13 @@
+/* CSS Document */
+.elementsPad{
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    padding: 15px;
+    width: 105px;
+    background-color: #F2F2F2
+}
+
+.elementsPadHead{
+    font-size: 18px
+}
