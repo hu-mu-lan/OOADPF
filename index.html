@@ -87,16 +87,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>1.1:Designate machine.</td>
+                      <td id="step11">1.1:Designate machine.</td>
                     </tr>
                     <tr>
-                      <td>1.2:Identify domains.</td>
+                      <td id="step12">1.2:Identify domains.</td>
                     </tr>
                     <tr>
-                      <td>1.3:Identify interactions.</td>
+                      <td id="step13">1.3:Identify interactions.</td>
                     </tr>
                     <tr>
-                      <td>1.4:Check context diagram.</td>
+                      <td id="step14">1.4:Check context diagram.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -114,19 +114,19 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>2.1:Identify requirements.</td>
+                      <td id="step21">2.1:Identify requirements.</td>
                     </tr>
                     <tr>
-                      <td>2.2:Identify references.</td>
+                      <td id="step22">2.2:Identify references.</td>
                     </tr>
                     <tr>
-                      <td>2.3:Check problem diagram.</td>
+                      <td id="step23">2.3:Check problem diagram.</td>
                     </tr>
                   </tbody>
                 </table>
                 <br>
-                <button type="button" class="layui-btn">Back</button>
-                <button type="button" class="layui-btn">Next</button>
+                <button type="button" class="layui-btn" onClick="back()">Back</button>
+                <button type="button" class="layui-btn" onClick="next()">Next</button>
                 <br>
                 <br>
                 <div class="layui-collapse">
@@ -156,9 +156,10 @@
         </div>
       </div>
     </div> 
-    
+    <script src="js/step.js" charset="utf-8"></script>
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
     <script>
+//        stepOnLoad();
         layui.use('element', function(){
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
             //监听导航点击
