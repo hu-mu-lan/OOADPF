@@ -50,17 +50,17 @@
           <div class="layui-card">
             <div class="layui-card-header elementsPadHead">Elements</div>
             <div class="layui-card-body">
-                <button title="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/machine.png"></image></button>
+                <button title="machine" id="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/machine.png"></image></button>
                 <br><br>
-                <button title="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/domain.png"></image></button>
+                <button title="domain" id="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/domain.png"></image></button>
                 <br><br>
-                <button title="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/requirement.png"></image></button>
+                <button title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/requirement.png"></image></button>
                 <br><br>
-                <button title="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/interface.png"></image></button>
+                <button title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/interface.png"></image></button>
                 <br><br>
-                <button title="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/reference.png"></image></button>
+                <button title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/reference.png"></image></button>
                 <br><br>
-                <button title="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/constraint.png"></image></button>
+                <button title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/constraint.png"></image></button>
                 <br><br>
             </div>
           </div>
@@ -74,6 +74,7 @@
           <div class="layui-card">
             <div class="layui-card-header informationPadHead">Process of scenario based projection</div>
             <div class="layui-card-body">
+                <div>We are now at Step <b id="stepnum"></b> Period <b id="periodnum"></b> !</div>
                 <table class="layui-table">
                   <colgroup>
                     <col width="150">
@@ -159,7 +160,7 @@
     <script src="js/step.js" charset="utf-8"></script>
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
     <script>
-//        stepOnLoad();
+        stepOnLoad();
         layui.use('element', function(){
             var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
             //监听导航点击
