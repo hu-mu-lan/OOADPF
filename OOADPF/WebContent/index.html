@@ -12,9 +12,9 @@
 <body>
     <div>
         <ul class="layui-nav layui-bg-cyan">
-            <a href="index.html"><i class="layui-icon layui-icon-edit titleLogo" >画图工具</i></a>
-            <li class="layui-nav-item layui-this"><a href="">New</a></li>
-            <li class="layui-nav-item"><a href="">Merge</a></li>
+            <a href="index.html"><i class="layui-icon layui-icon-edit titleLogo">画图工具</i></a>
+            <li class="layui-nav-item layui-this" id="newli" onclick="newCanvas()"><a href="javascript:void(0);" id="new">New</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0);">Merge</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">Upload</a>
                 <dl class="layui-nav-child">
@@ -22,23 +22,24 @@
                     <dd><a href="">Upload PF</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">Open</a></li>
-            <li class="layui-nav-item"><a href="">Save</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0);">Open</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0);">Save</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">Download</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">XMLProject</a></dd>
-                    <dd><a href="">TranslateFile</a></dd>
+                    <dd><a href="javascript:void(0);">XMLProject</a></dd>
+                    <dd><a href="javascript:void(0);">TranslateFile</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:;">Ontology</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">Pontology</a></dd>
-                    <dd><a href="">Eontology</a></dd>
+                    <dd><a href="javascript:void(0);">Pontology</a></dd>
+                    <dd><a href="javascript:void(0);">Eontology</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">Help</a></li>
+            <li class="layui-nav-item"><a href="javascript:void(0);">Help</a></li>
+
         </ul>
     </div>
     
@@ -157,18 +158,14 @@
         </div>
       </div>
     </div> 
+
+
     <script src="js/step.js" charset="utf-8"></script>
+    <script src="js/newCanvas.js" charset="utf-8"></script>
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
     <script>
         stepOnLoad();
-        layui.use('element', function(){
-            var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-            //监听导航点击
-            element.on('nav(demo)', function(elem){
-            //console.log(elem)
-            layer.msg(elem.text());
-          });
-        });
+        
     </script>
 </body>
 </html>
