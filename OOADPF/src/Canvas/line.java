@@ -6,8 +6,8 @@ public interface line extends component{
 	shape origin = null;
 	shape terminal = null;
 	
-	public editoInfo(){}
-	public displayAddPhonomenon(){}
-	public displayMinusPhonomenon(){}
+	public void editInfo(shape origin,shape terminal,String a){}
+	public void displayAddPhonomenon(String a){}
+	public void displayMinusPhonomenon(String a){}
 	
 }

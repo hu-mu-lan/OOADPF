@@ -14,21 +14,21 @@ public class constraint implements line{
 		this.Phenomenen=new conInteractionPhenomenon();
 	}
 	
-	public editInfo(shape origin,shape terminal,String type){
+	public void editInfo(shape origin,shape terminal,String type){
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
 	}
 	
-	public displayAddPhonomenon(String a){
+	public void displayAddPhonomenon(String a){
 		Phonomenon.addPhonomenon(a);
 	}
 	
-	public displayMinusPhonomenon(String a){
+	public void displayMinusPhonomenon(String a){
 		Phonomenon.minusPhonomenon(a);
 	}
 	
-	public displayChangeIsConstrint(isConstraint){
+	public void displayChangeIsConstrint(isConstraint){
 		Phonomenon.changeConstraint(isConstraint);
 	}
 

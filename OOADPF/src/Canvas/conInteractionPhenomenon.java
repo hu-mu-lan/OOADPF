@@ -10,16 +10,16 @@ public class conInteractionPhenomenon implements phenomenon{
 		Arraylist<String> pList= new ArrayList<>();
 		this.isConstraint=isConstraint;
 	}
-	puclic addPhonomenen(String a){
+	public void addPhonomenen(String a){
 		pList.add(a);
 	}
 	
-	public minusPhonomenen（String a){
+	public void minusPhonomenen(String a){
 		int i =pList.indexOf(a);
 		pList.remove(i);
 	}
 	
-	public changeConstraint(isConstraint){
+	public void changeConstraint(isConstraint){
 		this.isConstraint=isConstraint;
 	}
 }

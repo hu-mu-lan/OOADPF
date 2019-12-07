@@ -9,11 +9,11 @@ public class interactionPhenomenon implements phenomenon{
 		Arraylist<String> pList= new ArrayList<>();
 	}
 	
-	puclic addPhonomenen(String a){
+	public void addPhonomenen(String a){
 		pList.add(a);
 	}
 	
-	public minusPhonomenen（String a){
+	public void minusPhonomenen(String a){
 		int i =pList.indexOf(a);
 		pList.remove(i);
 	}
