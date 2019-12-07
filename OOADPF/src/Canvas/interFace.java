@@ -1,18 +1,31 @@
 package Canvas;
 
 public class interFace implements line{
-	String type = "";	
+	tring type = "";	
+	phenomenon Phenomenon = null;
+	
 	shape origin = null;
 	shape terminal = null;
-	phenomenon Phenomenon = null;
-	public void editInfo(String type, shape origin, shape terminal) {
-		this.type = type;
-		this.origin = origin;
-		this.terminal = terminal;
+	
+	public interFace(shape origin,shape terminal,String type){
+		this.type=type;
+		this.origin=origin;
+		this.terminal=terminal;
+		this.Phenomenen=new InteractionPhenomenon();
 	}
-
-	public void editPhenomenon(phenomenon Phenomenon) {
-		this.Phenomenon = Phenomenon;
+	
+	public editoInfo(shape origin,shape terminal,String type){
+		this.type=type;
+		this.origin=origin;
+		this.terminal=terminal;
+	}
+	
+	public displayAddPhonomenon(String a){
+		Phonomenon.addPhonomenon(a);
+	}
+	
+	public displayMinusPhonomenon(String a){
+		Phonomenon.minusPhonomenon(a);
 	}
 
 }
