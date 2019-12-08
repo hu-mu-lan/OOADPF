@@ -7,4 +7,5 @@ public interface phenomenon {
 	
 	public default void addPhonomenon(String a){}
 	public default void minusPhonomenon(String a){}
+	public default ArrayList<String> getPlist(){return pList;}
 }

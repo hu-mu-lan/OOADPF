@@ -1,6 +1,6 @@
 package Canvas;
 
-public class constraint implements line{
+public class constraint extends line{
 	String type = "";	
 	conInteractionPhenomenon Phenomenon = null;
 	
@@ -12,7 +12,7 @@ public class constraint implements line{
 		this.origin=origin;
 		this.terminal=terminal;
 		this.Phenomenon = new conInteractionPhenomenon(false);
-		convas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public String getType() {
@@ -28,29 +28,29 @@ public class constraint implements line{
 	}
 	
 	public void editInfo(shape origin,shape terminal,String type){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void displayAddPhonomenon(String a){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		Phenomenon.addPhonomenon(a);
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void displayMinusPhonomenon(String a){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		Phenomenon.minusPhonomenon(a);
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void displayChangeIsConstrint(boolean isConstraint){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		Phenomenon.changeConstraint(isConstraint);
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 
 }

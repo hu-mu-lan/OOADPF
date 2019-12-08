@@ -1,6 +1,6 @@
 package Canvas;
 
-public class interFace implements line{
+public class interFace extends line{
 	String type = "";	
 	phenomenon Phenomenon = null;
 	
@@ -24,27 +24,26 @@ public class interFace implements line{
 		this.origin=origin;
 		this.terminal=terminal;
 		this.Phenomenon=new interactionPhenomenon();
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void editInfo(shape origin,shape terminal,String type){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void displayAddPhonomenon(String a){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		Phenomenon.addPhonomenon(a);
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
 	
 	public void displayMinusPhonomenon(String a){
-		canvas.minusComponent(this);
+		canvas.minusLine(this);
 		Phenomenon.minusPhonomenon(a);
-		canvas.addComponent(this);
+		canvas.addLine(this);
 	}
-
 }

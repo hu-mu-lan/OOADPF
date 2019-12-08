@@ -22,4 +22,8 @@ public class conInteractionPhenomenon implements phenomenon{
 	public void changeConstraint(boolean isConstraint){
 		this.isConstraint=isConstraint;
 	}
+	
+	public ArrayList<String> getPlist(){
+		return pList;
+	}
 }

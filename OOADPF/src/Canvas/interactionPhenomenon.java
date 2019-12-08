@@ -6,7 +6,7 @@ public class interactionPhenomenon implements phenomenon{
 	ArrayList<String> pList= null;
 	
 	public interactionPhenomenon(){
-		pList= new ArrayList<>();
+		pList= new ArrayList<String>();
 	}
 	
 	public void addPhonomenon(String a){
@@ -16,5 +16,9 @@ public class interactionPhenomenon implements phenomenon{
 	public void minusPhonomenon(String a){
 		int i =pList.indexOf(a);
 		pList.remove(i);
+	}
+	
+	public ArrayList<String> getPlist(){
+		return pList;
 	}
 }
