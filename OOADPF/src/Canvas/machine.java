@@ -1,22 +1,22 @@
 package Canvas;
 
 public class machine extends shape {
-   public double width;
-    public double height;
+	public double top;
+    public double left;
     public String Shortname,Description;
 
-    public machine(double w, double h,String shortname,String description) {
-        this.width = w;
-        this.height = h;
+    public machine(double top, double left,String shortname,String description) {
+        this.top = top;
+        this.left = left;
         this.Shortname =shortname ;
         this.Description=description;
         canvas.addShape(this);
     }
     
-    public void changePos(double width,double height) {
+    public void changePos(double top, double left) {
     	canvas.minusShape(this);
-    	this.width=width;
-    	this.height=height;
+        this.top = top;
+        this.left = left;
     	canvas.addShape(this);
     }
     
@@ -30,11 +30,11 @@ public class machine extends shape {
     public String getDescription() {
     	return this.Description;
     }
-    public double getWidth() {
-        return this.width;
+    public double getTop() {
+        return this.top;
     }
-    public double getHeight() {
-        return this.height;
+    public double getLeft() {
+        return this.left;
     }
     public String getShortname() {
         return this.Shortname;

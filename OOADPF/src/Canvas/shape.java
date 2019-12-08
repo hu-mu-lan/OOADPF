@@ -1,12 +1,12 @@
 package Canvas;
 
 public class shape{
-    public double width;
-    public double height;
+    public double top;
+    public double left;
     public String Description;
     
     public String getDescription() {return Description;}
-    public double getWidth() {return width;}
-    public double getHeight() {return height;}
+    public double getWidth() {return top;}
+    public double getHeight() {return left;}
     public void changePos(double width,double height) {}
 }

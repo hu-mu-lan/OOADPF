@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/informationPad.css"/>
 </head>
     
-<body>
+<body bgcolor="#EBEBEB">
     <div>
         <ul class="layui-nav layui-bg-cyan">
             <a href="index.html"><i class="layui-icon layui-icon-edit titleLogo">画图工具</i></a>
@@ -42,7 +42,7 @@
 
         </ul>
     </div>
-    
+
     <br>
 
     <div class="elementsPad">
@@ -50,18 +50,18 @@
         <div class="layui-col">
           <div class="layui-card">
             <div class="layui-card-header elementsPadHead">Elements</div>
-            <div class="layui-card-body">
-                <button title="machine" id="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary"><image src="img/machine.png"></image></button>
+            <div class="layui-card-body" style="text-align: center;">
+                <button name="dragable" title="machine" id="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary">machine</button>
                 <br><br>
-                <button title="domain" id="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/domain.png"></image></button>
+                <button name="dragable" title="domain" id="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">domain</button>
                 <br><br>
-                <button title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/requirement.png"></image></button>
+                <button name="dragable" title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">requirement</button>
                 <br><br>
-                <button title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/interface.png"></image></button>
+                <button name="dragable" title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
                 <br><br>
-                <button title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/reference.png"></image></button>
+                <button name="dragable" title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
                 <br><br>
-                <button title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled"><image src="img/constraint.png"></image></button>
+                <button name="dragable" title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">constraint</button>
                 <br><br>
             </div>
           </div>
@@ -159,7 +159,7 @@
       </div>
     </div> 
 
-
+	<script src="js/mouseDrag.js" charset="utf-8"></script>
     <script src="js/step.js" charset="utf-8"></script>
     <script src="js/newCanvas.js" charset="utf-8"></script>
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>

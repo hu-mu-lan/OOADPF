@@ -10,10 +10,7 @@ public class newCanvas extends HttpServlet{
 		project item = new project();
 		String Description = request.getParameter("description");
 		item.setDescription(Description);
-	}
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		project item = new project();
-		String Description = request.getParameter("description");
-		item.setDescription(Description);
+		HttpSession session = request.getSession();
+		session.setAttribute("OneProject", item);
 	}
 }

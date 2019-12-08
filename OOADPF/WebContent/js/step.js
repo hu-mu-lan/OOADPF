@@ -70,9 +70,13 @@ function nextOperation(step, period){
         document.getElementById("requirement").classList.add("layui-btn-disabled");
         document.getElementById("reference").classList.remove("layui-btn-disabled");
         document.getElementById("reference").classList.add("layui-btn-primary");
+        document.getElementById("constraint").classList.remove("layui-btn-disabled");
+        document.getElementById("constraint").classList.add("layui-btn-primary");
     }else if(step == 2 && period == 3){
         document.getElementById("reference").classList.remove("layui-btn-primary");
         document.getElementById("reference").classList.add("layui-btn-disabled");
+        document.getElementById("constraint").classList.remove("layui-btn-primary");
+        document.getElementById("constraint").classList.add("layui-btn-disabled");
     }
 }
 
@@ -120,9 +124,13 @@ function backOperation(step, period){
         document.getElementById("requirement").classList.add("layui-btn-primary");
         document.getElementById("reference").classList.remove("layui-btn-primary");
         document.getElementById("reference").classList.add("layui-btn-disabled");
+        document.getElementById("constraint").classList.remove("layui-btn-primary");
+        document.getElementById("constraint").classList.add("layui-btn-disabled");
     }else if(step == 2 && period == 2){
         document.getElementById("reference").classList.remove("layui-btn-disabled");
         document.getElementById("reference").classList.add("layui-btn-primary");
+        document.getElementById("constraint").classList.remove("layui-btn-disabled");
+        document.getElementById("constraint").classList.add("layui-btn-primary");
     }
 }
 

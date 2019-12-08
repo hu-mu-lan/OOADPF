@@ -2,12 +2,8 @@
 .informationPad{
     position: absolute;
     top: 80px;
-    right:20px;
+    right: 20px;
     padding: 15px;
-    width:355px;
+    width: 355px;
     background-color: #F2F2F2
-}
-
-.informationPadHead{
-    font-size: 18px
 }

@@ -1,13 +1,13 @@
 package Canvas;
 
 public class domain extends shape {
-    public double width;
-    public double height;
+	public double top;
+    public double left;
     public String Shortname,Description,Property,Type;
 
-    public domain(double w, double h,String shortname,String description,String property,String type) {
-        this.width = w;
-        this.height = h;
+    public domain(double top, double left,String shortname,String description,String property,String type) {
+        this.top = top;
+        this.left = left;
         this.Shortname =shortname ;
         this.Description=description;
         this.Property=property;
@@ -15,10 +15,10 @@ public class domain extends shape {
         canvas.addShape(this);
     }
     
-    public void changePos(double width,double height) {
+    public void changePos(double top,double left) {
     	canvas.minusShape(this);
-    	this.width=width;
-    	this.height=height;
+        this.top = top;
+        this.left = left;
     	canvas.addShape(this);
     }
     
@@ -34,11 +34,11 @@ public class domain extends shape {
     public String getDescription() {
     	return this.Description;
     }
-    public double getWidth() {
-        return this.width;
+    public double getTop() {
+        return this.top;
     }
-    public double getHeight() {
-        return this.height;
+    public double getLeft() {
+        return this.left;
     }
     public String getShortname() {
     	return this.Shortname;
