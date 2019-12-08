@@ -10,7 +10,9 @@ function newCanvas(){
         ,moveType: 1 //拖拽模式，0或者1
         ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><b>Description:</b><br><form><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"><br><button type="button" class="layui-btn layui-btn-fluid" onclick="sendDescription(form.description)">submit</button></form></div>'
         ,success: function(layero){
-        	
+            document.getElementById("back").classList.remove("layui-btn-disabled");
+            document.getElementById("next").classList.remove("layui-btn-disabled");
+            document.getElementById("machine").classList.remove("layui-btn-disabled");
         }
       });
 }
@@ -29,4 +31,5 @@ function sendDescription(description){
     document.getElementById("new").setAttribute("href","javascript:return false;");
     document.getElementById("new").style.opacity = 0.2;
     layer.close(layer.index);
+    layer.msg('Succeed to new a Project!');
 }

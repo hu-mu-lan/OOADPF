@@ -10,6 +10,9 @@ function stepOnLoad(){
         layer.msg(elem.text());
       });
     });
+    document.getElementById("back").classList.add("layui-btn-disabled");
+    document.getElementById("next").classList.add("layui-btn-disabled");
+    document.getElementById("machine").classList.add("layui-btn-disabled");
     document.getElementById("stepnum").innerHTML = Step;
     document.getElementById("periodnum").innerHTML = Period;
     document.getElementById("step"+Step+Period).style.backgroundColor = '#FFFF66';

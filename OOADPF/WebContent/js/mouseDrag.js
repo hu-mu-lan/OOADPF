@@ -38,6 +38,42 @@ function drag(elem) {
             document.onmousemove = null;
             elem.style.left = rawOffsetLeft + "px";
             elem.style.top = rawOffsetTop + "px";
+            console.log("still working");
+            newMachine();
+            document.onmouseup = null;
         }
     }
+}
+
+function newMachine(){
+      layer.open({
+        type: 1
+        ,title: 'New Machine'
+        ,closeBtn: 1
+        ,area: '300px;'
+        ,shade: 0.8
+        ,id: 'newCanvas' //设定一个id，防止重复弹出
+        ,btnAlign: 'c'
+        ,moveType: 1 //拖拽模式，0或者1
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newMachineAjax(form.description)">submit</button></form></div>'
+        ,success: function(layero){
+        	
+        }
+      });
+}
+
+function newMachineAjax(description){
+	var xmlHttp = new XMLHttpRequest();
+	var des = description.value;
+	xmlHttp.onreadystatechange = function(){
+	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+	        //成功信息
+	    }
+	}
+	xmlHttp.open("GET", "newCanvas.do?description="+des, true);            
+	xmlHttp.send();
+	document.getElementById("newli").setAttribute("onclick",null);
+    document.getElementById("new").setAttribute("href","javascript:return false;");
+    document.getElementById("new").style.opacity = 0.2;
+    layer.close(layer.index);
 }
