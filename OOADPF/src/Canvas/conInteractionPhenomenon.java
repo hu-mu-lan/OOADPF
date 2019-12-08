@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class conInteractionPhenomenon implements phenomenon{
 	boolean isConstraint = false;
-	Arraylist<String> pList= null;
+	ArrayList<String> pList;
 	
-	public coninteractionPhenomenon(isConstraint){
-		Arraylist<String> pList= new ArrayList<>();
+	public conInteractionPhenomenon(boolean isConstraint){
+		pList= new ArrayList<String>();
 		this.isConstraint=isConstraint;
 	}
-	public void addPhonomenen(String a){
+	public void addPhonomenon(String a){
 		pList.add(a);
 	}
 	
-	public void minusPhonomenen(String a){
+	public void minusPhonomenon(String a) {
 		int i =pList.indexOf(a);
 		pList.remove(i);
 	}
 	
-	public void changeConstraint(isConstraint){
+	public void changeConstraint(boolean isConstraint){
 		this.isConstraint=isConstraint;
 	}
 }

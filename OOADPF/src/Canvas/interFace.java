@@ -1,7 +1,5 @@
 package Canvas;
 
-import Canvas.*;
-
 public class interFace implements line{
 	String type = "";	
 	phenomenon Phenomenon = null;
@@ -9,30 +7,44 @@ public class interFace implements line{
 	shape origin = null;
 	shape terminal = null;
 	
-	/*public interFace() {
-		this.Phenomenen=new InteractionPhenomenon();
-	}*/
+	public String getType() {
+		return this.type;
+	}
+	
+	public shape getOrigin() {
+		return this.origin;
+	}
+	
+	public shape getTerminal() {
+		return this.terminal;
+	}
 	
 	public interFace(shape origin,shape terminal,String type){
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
-		this.Phenomenen=new InteractionPhenomenon();
-		System.out.println("ooo");
+		this.Phenomenon=new interactionPhenomenon();
+		canvas.addComponent(this);
 	}
 	
 	public void editInfo(shape origin,shape terminal,String type){
+		canvas.minusComponent(this);
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
+		canvas.addComponent(this);
 	}
 	
 	public void displayAddPhonomenon(String a){
-		Phonomenon.addPhonomenon(a);
+		canvas.minusComponent(this);
+		Phenomenon.addPhonomenon(a);
+		canvas.addComponent(this);
 	}
 	
 	public void displayMinusPhonomenon(String a){
-		Phonomenon.minusPhonomenon(a);
+		canvas.minusComponent(this);
+		Phenomenon.minusPhonomenon(a);
+		canvas.addComponent(this);
 	}
 
 }

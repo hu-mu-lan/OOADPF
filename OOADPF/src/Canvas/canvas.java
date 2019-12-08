@@ -21,4 +21,12 @@ public class canvas {
 	public void output(component Component) {
 		
 	}
+	
+	public static void addComponent(component a) {
+		
+	}
+	
+	public static void minusComponent(component a) {
+		
+	}
 }
