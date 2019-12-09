@@ -1,7 +1,11 @@
 for (i = 0; i < 6; i++) { 
     var dragableElem = document.getElementsByName('dragable')[i];
     drag(dragableElem);
- }
+}
+
+var mouseOutLeft;
+var mouseOutTop;
+
 
 function drag(elem) {
     var disX,
@@ -36,6 +40,8 @@ function drag(elem) {
         //当鼠标按上时,使move事件失效,这样元素就不会再跟着移动了
         document.onmouseup = function(e){
             document.onmousemove = null;
+            mouseOutLeft = elem.getBoundingClientRect().left;
+            mouseOutTop = elem.getBoundingClientRect().top;
             elem.style.left = rawOffsetLeft + "px";
             elem.style.top = rawOffsetTop + "px";
             console.log("still working");
@@ -52,28 +58,26 @@ function newMachine(){
         ,closeBtn: 1
         ,area: '300px;'
         ,shade: 0.8
-        ,id: 'newCanvas' //设定一个id，防止重复弹出
+        ,id: 'newMachine' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newMachineAjax(form.description)">submit</button></form></div>'
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newMachineAjax(form.description, form.shortname)">submit</button></form></div>'
         ,success: function(layero){
         	
         }
       });
 }
 
-function newMachineAjax(description){
+function newMachineAjax(description, shortname){
 	var xmlHttp = new XMLHttpRequest();
 	var des = description.value;
+    var shn = shortname.value;
 	xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	        //成功信息
 	    }
 	}
-	xmlHttp.open("GET", "newCanvas.do?description="+des, true);            
+	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="mouseOutLeft, true);            
 	xmlHttp.send();
-	document.getElementById("newli").setAttribute("onclick",null);
-    document.getElementById("new").setAttribute("href","javascript:return false;");
-    document.getElementById("new").style.opacity = 0.2;
     layer.close(layer.index);
 }
