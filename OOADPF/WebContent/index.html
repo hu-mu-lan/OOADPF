@@ -57,7 +57,7 @@
                 <br><br>
                 <button name="dragableRequirement" title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">requirement</button>
                 <br><br>
-                <button title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
+                <button onclick="newInterface()" title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
                 <br><br>
                 <button title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
                 <br><br>
@@ -130,7 +130,6 @@
                 <button type="button" id="back" class="layui-btn" onClick="back()">Back</button>
                 <button type="button" id="next" class="layui-btn" onClick="next()">Next</button>
                 <br>
-                <br>
                 <div class="layui-collapse">
                   <div class="layui-colla-item">
                     <h2 class="layui-colla-title">Diagram</h2>
@@ -162,13 +161,17 @@
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
 	<script src="js/mouseDragMachine.js" charset="utf-8"></script>
     <script src="js/mouseDragDomain.js" charset="utf-8"></script>
-    <script src="js/mouseDragRequirement.js" charset="utf-8"></script>
+<!--    <script src="js/mouseDragRequirement.js" charset="utf-8"></script>-->
     <script src="js/step.js" charset="utf-8"></script>
     <script src="js/newCanvas.js" charset="utf-8"></script>
-
+    <script src="js/newInterface.js" charset="utf-8"></script>
+<!--
+    <script src="js/newReference.js" charset="utf-8"></script>
+    <script src="js/newConstraint.js" charset="utf-8"></script>
+-->
+    <script src="js/getLists.js" charset="utf-8"></script>
     <script>
-        stepOnLoad();
-        
+        stepOnLoad();   
     </script>
 </body>
 </html>

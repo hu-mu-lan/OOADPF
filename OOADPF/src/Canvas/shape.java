@@ -6,7 +6,7 @@ public class shape{
     public String Description;
     
     public String getDescription() {return Description;}
-    public double getWidth() {return top;}
-    public double getHeight() {return left;}
+    public double getTop() {return top;}
+    public double getLeft() {return left;}
     public void changePos(double width,double height) {}
 }

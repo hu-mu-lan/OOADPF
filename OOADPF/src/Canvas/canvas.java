@@ -5,31 +5,31 @@ import Canvas.line;
 
 import java.util.ArrayList;
 public class canvas {
-	static ArrayList <shape> slist=null;
-	static ArrayList <line> llist=null;
+	static ArrayList <shape> slist;
+	static ArrayList <line> llist;
 
 	public canvas() {
 		slist = new ArrayList<shape>();
 		llist = new ArrayList<line>();
 	}
 	
-    public static void check () {
+    public void check () {
     }
-    public static void output() {
+    public void output() {
     }
     
-    public static void addShape (shape a){
+    public void addShape (shape a){
         slist.add(a);
     }
-    public static void minusShape (shape a){
+    public void minusShape (shape a){
         int i = slist.indexOf(a);
         slist.remove(i);
     }
 
-    public static void addLine (line a){
+    public void addLine (line a){
         llist.add(a);
     }
-    public static void minusLine (line a){
+    public void minusLine (line a){
         int i = llist.indexOf(a);
         llist.remove(i);
     }

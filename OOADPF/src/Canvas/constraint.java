@@ -12,7 +12,6 @@ public class constraint extends line{
 		this.origin=origin;
 		this.terminal=terminal;
 		this.Phenomenon = new conInteractionPhenomenon(false);
-		canvas.addLine(this);
 	}
 	
 	public String getType() {
@@ -28,29 +27,21 @@ public class constraint extends line{
 	}
 	
 	public void editInfo(shape origin,shape terminal,String type){
-		canvas.minusLine(this);
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
-		canvas.addLine(this);
 	}
 	
 	public void displayAddPhonomenon(String a){
-		canvas.minusLine(this);
 		Phenomenon.addPhonomenon(a);
-		canvas.addLine(this);
 	}
 	
 	public void displayMinusPhonomenon(String a){
-		canvas.minusLine(this);
 		Phenomenon.minusPhonomenon(a);
-		canvas.addLine(this);
 	}
 	
 	public void displayChangeIsConstrint(boolean isConstraint){
-		canvas.minusLine(this);
 		Phenomenon.changeConstraint(isConstraint);
-		canvas.addLine(this);
 	}
 
 }

@@ -5,6 +5,7 @@ drag(dragableElem);
 var mouseOutLeft;
 var mouseOutTop;
 
+var laywindow3;
 
 function drag(elem) {
     var disX,
@@ -31,7 +32,7 @@ function drag(elem) {
         document.onmousemove = function (e) {
 
             var event = e || window.event;
-                    //鼠标按下的点(相对document) - 鼠标按下的点(相对当前点击的元素) 
+             //鼠标按下的点(相对document) - 鼠标按下的点(相对当前点击的元素) 
             elem.style.left = event.pageX - disX + "px";
             elem.style.top = event.pageY - disY + "px";
 
@@ -44,39 +45,40 @@ function drag(elem) {
             elem.style.left = rawOffsetLeft + "px";
             elem.style.top = rawOffsetTop + "px";
             console.log("still working");
-            newMachine();
+            newRequirement();
             document.onmouseup = null;
         }
     }
 }
 
-function newMachine(){
-      layer.open({
+function newRequirement(){
+      laywindow3 = layer.open({
         type: 1
-        ,title: 'New Machine'
+        ,title: 'New Requirement'
         ,closeBtn: 1
-        ,area: '300px;'
         ,shade: 0.8
-        ,id: 'newMachine' //设定一个id，防止重复弹出
+        ,id: 'newRequirement' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newMachineAjax(form.description, form.shortname)">submit</button></form></div>'
-        ,success: function(layero){
-        	
+        ,content: ''
+		,success: function(layero){
+            
         }
       });
 }
 
-function newMachineAjax(description, shortname){
+function newRequirementAjax(description, shortname, physicalproperty, domaintype){
 	var xmlHttp = new XMLHttpRequest();
 	var des = description.value;
     var shn = shortname.value;
+    var ppt = physicalproperty.value;
+    var dmt = domaintype.value;
 	xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	        //成功信息
 	    }
 	}
-	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
+	xmlHttp.open("GET", "newDomain.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft+"&Property="+ppt+"&Type="+dmt, true);            
 	xmlHttp.send();
-    layer.close(layer.index);
+    layer.closeAll();
 }

@@ -5,6 +5,7 @@ drag(dragableElem);
 var mouseOutLeft;
 var mouseOutTop;
 
+var laywindow;
 
 function drag(elem) {
     var disX,
@@ -51,7 +52,7 @@ function drag(elem) {
 }
 
 function newMachine(){
-      layer.open({
+      laywindow = layer.open({
         type: 1
         ,title: 'New Machine'
         ,closeBtn: 1
@@ -78,5 +79,5 @@ function newMachineAjax(description, shortname){
 	}
 	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
 	xmlHttp.send();
-    layer.close(layer.index);
+    layer.closeAll();
 }

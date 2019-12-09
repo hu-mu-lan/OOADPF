@@ -12,23 +12,18 @@ public class domain extends shape {
         this.Description=description;
         this.Property=property;
         this.Type=type;
-        canvas.addShape(this);
     }
     
     public void changePos(double top,double left) {
-    	canvas.minusShape(this);
         this.top = top;
         this.left = left;
-    	canvas.addShape(this);
     }
     
     public void editInfo(String shortname,String description,String property,String type){
-		canvas.minusShape(this);
 		this.Shortname =shortname ;
         this.Description=description;
         this.Property=property;
         this.Type=type;
-		canvas.addShape(this);
 	}
     
     public String getDescription() {

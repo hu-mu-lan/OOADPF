@@ -32,7 +32,7 @@ public class newDomain extends HttpServlet{
 		}else{
 			Type = "Lexical";
 		}
-		
+		System.out.println(left+ top+ ShortName+ Description+ Property+ Type);
 		shape Domain = new domain(left, top, ShortName, Description, Property, Type);
 		item.Canvas.addShape(Domain);
 	}
