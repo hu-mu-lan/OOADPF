@@ -1,7 +1,6 @@
-for (i = 0; i < 6; i++) { 
-    var dragableElem = document.getElementsByName('dragable')[i];
-    drag(dragableElem);
-}
+var dragableElem = document.getElementsByName('dragableMachine')[0];
+drag(dragableElem);
+
 
 var mouseOutLeft;
 var mouseOutTop;
@@ -77,7 +76,7 @@ function newMachineAjax(description, shortname){
 	        //成功信息
 	    }
 	}
-	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="mouseOutLeft, true);            
+	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
 	xmlHttp.send();
     layer.close(layer.index);
 }

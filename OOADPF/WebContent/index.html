@@ -51,17 +51,17 @@
           <div class="layui-card">
             <div class="layui-card-header elementsPadHead">Elements</div>
             <div class="layui-card-body" style="text-align: center;">
-                <button name="dragable" title="machine" id="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary">machine</button>
+                <button name="dragableMachine" title="machine" id="machine" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-primary">machine</button>
                 <br><br>
-                <button name="dragable" title="domain" id="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">domain</button>
+                <button name="dragableDomain" title="domain" id="domain" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">domain</button>
                 <br><br>
-                <button name="dragable" title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">requirement</button>
+                <button name="dragableRequirement" title="requirement" id="requirement" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">requirement</button>
                 <br><br>
-                <button name="dragable" title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
+                <button title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
                 <br><br>
-                <button name="dragable" title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
+                <button title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
                 <br><br>
-                <button name="dragable" title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">constraint</button>
+                <button title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">constraint</button>
                 <br><br>
             </div>
           </div>
@@ -159,7 +159,9 @@
       </div>
     </div> 
 
-	<script src="js/mouseDrag.js" charset="utf-8"></script>
+	<script src="js/mouseDragMachine.js" charset="utf-8"></script>
+    <script src="js/mouseDragDomain.js" charset="utf-8"></script>
+    <script src="js/mouseDragRequirement.js" charset="utf-8"></script>
     <script src="js/step.js" charset="utf-8"></script>
     <script src="js/newCanvas.js" charset="utf-8"></script>
     <script src="lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>

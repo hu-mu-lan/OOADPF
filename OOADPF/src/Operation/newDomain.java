@@ -15,8 +15,24 @@ public class newDomain extends HttpServlet{
 		double top = Double.parseDouble(request.getParameter("top"));
 		String ShortName = request.getParameter("ShortName");
 		String Description = request.getParameter("Description");
-		String Property = request.getParameter("Property");
-		String Type = request.getParameter("Type");
+		double PropertyNum = Double.parseDouble(request.getParameter("Property"));
+		double TypeNum = Double.parseDouble(request.getParameter("Type"));
+		String Property = null;
+		String Type = null;
+		if(PropertyNum == 1) {
+			Property = "GivenDomain";
+		}else {
+			Property = "DesignDomain";
+		}
+		
+		if(TypeNum == 1) {
+			Type = "Casual";
+		}else if(TypeNum == 2) {
+			Type = "Biddable";
+		}else{
+			Type = "Lexical";
+		}
+		
 		shape Domain = new domain(left, top, ShortName, Description, Property, Type);
 		item.Canvas.addShape(Domain);
 	}

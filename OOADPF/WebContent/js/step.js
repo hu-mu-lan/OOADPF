@@ -10,6 +10,9 @@ function stepOnLoad(){
         layer.msg(elem.text());
       });
     });
+    layui.use('form', function(){
+        var form = layui.form;
+    });
     document.getElementById("back").classList.add("layui-btn-disabled");
     document.getElementById("next").classList.add("layui-btn-disabled");
     document.getElementById("machine").classList.add("layui-btn-disabled");
