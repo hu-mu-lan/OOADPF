@@ -12,6 +12,7 @@ function stepOnLoad(){
     });
     layui.use('form', function(){
         var form = layui.form;
+		form.render();
     });
     document.getElementById("back").classList.add("layui-btn-disabled");
     document.getElementById("next").classList.add("layui-btn-disabled");

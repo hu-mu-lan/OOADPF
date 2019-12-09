@@ -53,15 +53,14 @@ function drag(elem) {
 function newDomain(){
       layer.open({
         type: 1
-        ,title: 'New Machine'
+        ,title: 'New Domain'
         ,closeBtn: 1
-        ,area: '300px;'
         ,shade: 0.8
-        ,id: 'newMachine' //设定一个id，防止重复弹出
+        ,id: 'newDomain' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><b>Physical Property:</b><br><div class="layui-form-item"><label class="layui-form-label">Physical Property</label><div class="layui-input-block"><select name="physicalproperty" lay-filter="aihao"><option value="1">GivenDomain</option><option value="2">DesignDomain</option></select></div></div><br><b>Domain Type:</b><br><div class="layui-form-item"><label class="layui-form-label">Domain Type</label><div class="layui-input-block"><select name="domaintype" lay-filter="aihao"><option value="1">Casual</option><option value="2">Biddable</option><option value="3">Lexical</option></select></div></div><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newDomainAjax(form.description, form.shortname, form.physicalproperty, form.domaintype)">submit</button></form></div>'
-        ,success: function(layero){
+        ,content: '<link rel="stylesheet" href="lib\\layui-v2.5.5\\css\\layui.css" media="all"><div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form class="layui-form"><b>Description:</b><br><div class="layui-form-item"><div class="layui-input-block"><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input></div></div><b>ShortName:</b><br><div class="layui-form-item"><div class="layui-input-block"><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input></div></div><b>Physical Property:</b><div class="layui-form-item"><div class="layui-input-block"><select name="physicalproperty" lay-filter="aihao"><option value="1">GivenDomain</option><option value="2">DesignDomain</option></select></div></div><b>Domain Type:</b><br><div class="layui-form-item"><div class="layui-input-block"><select name="domaintype" lay-filter="aihao"><option value="1">Casual</option><option value="2">Biddable</option><option value="3">Lexical</option></select></div></div><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newDomainAjax(form.description, form.shortname, form.physicalproperty, form.domaintype)">submit</button></form><script src="lib\\layui-v2.5.5\\layui.all.js"></script><script>layui.use("form", function(){var form = layui.form;form.render();});</script></div>'
+		,success: function(layero){
         	
         }
       });
