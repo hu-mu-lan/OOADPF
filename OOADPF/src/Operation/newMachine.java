@@ -17,5 +17,6 @@ public class newMachine extends HttpServlet{
 		String Description = request.getParameter("Description");
 		shape Machine = new machine(left, top, ShortName, Description);
 		item.Canvas.addShape(Machine);
+		System.out.println(Description+":"+left+" "+top);
 	}
 }

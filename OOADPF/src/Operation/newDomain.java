@@ -35,5 +35,6 @@ public class newDomain extends HttpServlet{
 		System.out.println(left+ top+ ShortName+ Description+ Property+ Type);
 		shape Domain = new domain(left, top, ShortName, Description, Property, Type);
 		item.Canvas.addShape(Domain);
+		System.out.println(Description+":"+left+" "+top);
 	}
 }

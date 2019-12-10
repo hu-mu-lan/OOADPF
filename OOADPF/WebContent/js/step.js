@@ -20,6 +20,8 @@ function stepOnLoad(){
     document.getElementById("stepnum").innerHTML = Step;
     document.getElementById("periodnum").innerHTML = Period;
     document.getElementById("step"+Step+Period).style.backgroundColor = '#FFFF66';
+    document.getElementsByName("myCanvas").width = document.body.offsetWidth;
+    document.getElementsByName("myCanvas").height = document.body.offsetHeight;
 }
 
 function next(){

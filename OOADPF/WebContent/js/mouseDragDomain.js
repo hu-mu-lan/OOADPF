@@ -46,6 +46,14 @@ function drag(elem) {
             console.log("still working");
             newDomain();
             document.onmouseup = null;
+            
+            var myParent = document.getElementById("body"); 
+            var myImage = document.createElement("img");
+            myImage.src = "img/domainBigBack.png";
+            myParent.appendChild(myImage);
+            myImage.style.position = "absolute";
+            myImage.style.left = mouseOutLeft + "px";
+			myImage.style.top = mouseOutTop + "px";
         }
     }
 }
@@ -80,4 +88,11 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
 	xmlHttp.open("GET", "newDomain.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft+"&Property="+ppt+"&Type="+dmt, true);            
 	xmlHttp.send();
     layer.closeAll();
+    var myParent = document.getElementById("body"); 
+    var myDomainName = document.createElement("b");
+    myParent.appendChild(myDomainName);
+    myDomainName.innerHTML = des;
+    myDomainName.style.position = "absolute";
+    myDomainName.style.left = mouseOutLeft + 25 + "px";
+    myDomainName.style.top = mouseOutTop + 30 + "px";
 }

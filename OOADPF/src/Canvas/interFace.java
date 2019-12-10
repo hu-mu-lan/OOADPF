@@ -3,7 +3,8 @@ package Canvas;
 public class interFace extends line{
 	String type = "";	
 	interactionPhenomenon Phenomenon = null;
-	
+	public double top;
+    public double left;
 	shape origin = null;
 	shape terminal = null;
 	
@@ -39,4 +40,11 @@ public class interFace extends line{
 	public void displayMinusPhonomenon(String a){
 		Phenomenon.minusPhonomenon(a);
 	}
+	
+    public double getTop() {
+        return this.top;
+    }
+    public double getLeft() {
+        return this.left;
+    }
 }

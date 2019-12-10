@@ -1,4 +1,4 @@
-function getSlist(){
+function getSlistIF(){
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", "getLists.do?Symbol=1&List=slist", true);            
 	xmlHttp.send();
@@ -15,6 +15,21 @@ function getSlist(){
 	}
 }
 
+function getSlist(){
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET", "getLists.do?Symbol=1&List=slist", true);            
+	xmlHttp.send();
+    xmlHttp.onreadystatechange = function(){
+	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            var result = xmlHttp.responseText;
+            var resultList = result.split(";");
+            for(var i = 1; i <= resultList.length; i++){
+                
+            }
+	    }
+	}
+}
+
 function getSlistAndLoc(){
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", "getLists.do?Symbol=2&List=slist", true);            
@@ -22,7 +37,10 @@ function getSlistAndLoc(){
     xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
             var result = xmlHttp.responseText;
-            window.alert(result);
+            var resultList = result.split(";");
+            for(var i = 1; i <= resultList.length - 2; i = i + 3){
+                
+            }
 	    }
 	}
 }

@@ -47,6 +47,16 @@ function drag(elem) {
             console.log("still working");
             newMachine();
             document.onmouseup = null;
+            
+            var myParent = document.getElementById("body"); 
+            var myImage = document.createElement("img");
+            myImage.src = "img/machineBigBack.png";
+            myParent.appendChild(myImage);
+            myImage.style.position = "absolute";
+            myImage.style.left = mouseOutLeft + "px";
+			myImage.style.top = mouseOutTop + "px";
+
+            
         }
     }
 }
@@ -80,4 +90,11 @@ function newMachineAjax(description, shortname){
 	xmlHttp.open("GET", "newMachine.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
 	xmlHttp.send();
     layer.closeAll();
+    var myParent = document.getElementById("body"); 
+    var myMachineName = document.createElement("b");
+    myParent.appendChild(myMachineName);
+    myMachineName.innerHTML = des;
+    myMachineName.style.position = "absolute";
+    myMachineName.style.left = mouseOutLeft + 50 + "px";
+    myMachineName.style.top = mouseOutTop + 30 + "px";
 }
