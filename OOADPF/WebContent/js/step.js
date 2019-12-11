@@ -149,10 +149,9 @@ function backOperation(step, period){
 
 
 function checkOne(){
-    return (hasInterface() >= hasDomain() && hasMachine() >= 1 && hasInterface() >= 1);
+    return (hasInterface() >= hasDomain() && hasMachine() == 1 && hasInterface() >= 1);
 }
 
 function checkTwo(){
-    window.alert("此处应添加检查第2步函数！")
-    return true;
+    return (hasRequirement() == 1);
 }

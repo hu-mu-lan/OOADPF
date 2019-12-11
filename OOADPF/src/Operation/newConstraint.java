@@ -2,6 +2,7 @@ package Operation;
 import Canvas.constraint;
 import Canvas.line;
 import Canvas.project;
+import Canvas.reference;
 import Canvas.shape;
 import java.io.*;
 import javax.servlet.*;
@@ -12,22 +13,25 @@ public class newConstraint extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		project item = (project)session.getAttribute("OneProject");
-		String originDes = request.getParameter("origin");
-		String terminalDes = request.getParameter("terminal");
-		shape origin = null;
-		shape terminal = null;
-		for(shape sitem: item.Canvas.getSlist()) {
-			if(sitem.Description.equals(originDes)) {
-				origin = sitem;
-			}
-		}
-		for(shape titem: item.Canvas.getSlist()) {
-			if(titem.Description.equals(terminalDes)) {
-				terminal = titem;
-			}
-		}
+		String originLoc = request.getParameter("origin");
+		String terminalLoc = request.getParameter("terminal");
+		String Phenomenons = request.getParameter("Phenomenons");
+		String[] PhenomenonsList = Phenomenons.split(";");
+		String isConstraint = request.getParameter("isConstraint");
+		shape origin = item.Canvas.getSlist().get(Integer.parseInt(originLoc)-1);
+		shape terminal = item.Canvas.getSlist().get(Integer.parseInt(terminalLoc)-1);
 		String Type = request.getParameter("Type");
-		line Constraint = new constraint(origin, terminal, Type);
+		constraint Constraint = new constraint(origin, terminal, Type);
 		item.Canvas.addLine(Constraint);
+		for(String item2 : PhenomenonsList) {
+			Constraint.displayAddPhonomenon(item2);
+		}
+		if(isConstraint.equals("true")) {
+			Constraint.displayChangeIsConstrint(true);
+		}
+		String tmp = String.valueOf(origin.getLeft()-37.5)+";"+String.valueOf(origin.getTop()+87.5)+";"+String.valueOf(terminal.getLeft()-37.5)+";"+String.valueOf(terminal.getTop()+87.5);
+    	System.out.println(tmp);
+		PrintWriter out = response.getWriter();
+    	out.write(tmp);
 	}
 }

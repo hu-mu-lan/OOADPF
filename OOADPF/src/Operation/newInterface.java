@@ -25,7 +25,6 @@ public class newInterface extends HttpServlet{
 			Interface.displayAddPhonomenon(item2);
 		}
 		String tmp = String.valueOf(origin.getLeft()-37.5)+";"+String.valueOf(origin.getTop()+87.5)+";"+String.valueOf(terminal.getLeft()-37.5)+";"+String.valueOf(terminal.getTop()+87.5);
-    	System.out.println(tmp);
 		PrintWriter out = response.getWriter();
     	out.write(tmp);
 	}

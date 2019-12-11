@@ -17,6 +17,5 @@ public class getShapeByIndex extends HttpServlet{
 		String desString = shapedes.getDescription();
 		PrintWriter out = response.getWriter();
     	out.write(desString);
-    	System.out.println("index: " + index + " des: " + shapedes.getDescription());
 	}
 }

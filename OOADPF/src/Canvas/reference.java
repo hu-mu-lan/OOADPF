@@ -2,7 +2,7 @@ package Canvas;
 
 public class reference extends line{
 	String type = "";	
-	conInteractionPhenomenon Phenomenon = null;
+	interactionPhenomenon Phenomenon = null;
 	
 	shape origin = null;
 	shape terminal = null;
@@ -23,7 +23,7 @@ public class reference extends line{
 		this.type=type;
 		this.origin=origin;
 		this.terminal=terminal;
-		this.Phenomenon=new conInteractionPhenomenon(false);
+		this.Phenomenon=new interactionPhenomenon();
 	}
 	
 	public void editInfo(shape origin,shape terminal,String type){
@@ -38,9 +38,5 @@ public class reference extends line{
 	
 	public void displayMinusPhonomenon(String a){
 		Phenomenon.minusPhonomenon(a);
-	}
-	
-	public void displayChangeIsConstrint(boolean isConstraint){
-		Phenomenon.changeConstraint(isConstraint);
 	}
 }

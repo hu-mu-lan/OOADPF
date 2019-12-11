@@ -60,9 +60,9 @@
                 <br><br>
                 <button onclick="newInterface()" title="interface" id="interface" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">interface</button>
                 <br><br>
-                <button title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
+                <button onclick="newReference()" title="reference" id="reference" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">reference</button>
                 <br><br>
-                <button title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">constraint</button>
+                <button onclick="newConstraint()" title="constraint" id="constraint" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-disabled">constraint</button>
                 <br><br>
             </div>
           </div>
@@ -137,20 +137,14 @@
                     <h2 class="layui-colla-title">Diagram</h2>
                     <div class="layui-colla-content" id="DiagramDescription">Content</div>
                   </div>
-                  <div class="layui-colla-item"  id="IndexPhe">
+                  <div class="layui-colla-item" id="IndexPhe">
                     <h2 class="layui-colla-title">Phenomenon</h2>
                   </div>
-                  <div class="layui-colla-item">
-                    <h2 class="layui-colla-title">Interaction</h2>
-                    <div class="layui-colla-content">Content</div>
-                  </div>
-                  <div class="layui-colla-item">
+                  <div class="layui-colla-item" id="IndexInt">
                     <h2 class="layui-colla-title">Reference</h2>
-                    <div class="layui-colla-content">Content</div>
                   </div>
-                  <div class="layui-colla-item">
-                    <h2 class="layui-colla-title">Other Information</h2>
-                    <div class="layui-colla-content">Content</div>
+                  <div class="layui-colla-item" id="IndexRef">
+                    <h2 class="layui-colla-title">Constraint</h2>
                   </div>
                 </div>
             </div>
@@ -166,10 +160,8 @@
     <script src="js/step.js" charset="utf-8"></script>
     <script src="js/newCanvas.js" charset="utf-8"></script>
     <script src="js/newInterface.js" charset="utf-8"></script>
-<!--
     <script src="js/newReference.js" charset="utf-8"></script>
     <script src="js/newConstraint.js" charset="utf-8"></script>
--->
     <script src="js/getLists.js" charset="utf-8"></script>
     <script src="js/hasMachine.js" charset="utf-8"></script>
     <script src="js/hasRequirement.js" charset="utf-8"></script>

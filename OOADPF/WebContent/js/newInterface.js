@@ -40,12 +40,8 @@ function removePhenomenon(init, phe){
             continue;
         }else{
             if(pheLists[i] == removePhe){
-            	console.log(pheLists[i]);
-            	console.log(removePhe);
                 myParent.removeChild(myParent.childNodes[i + allpheNums + 3]);
             }else{
-            	console.log(pheLists[i]);
-            	console.log(removePhe);
                 allPhenomenon = allPhenomenon + pheLists[i];
             }
         }

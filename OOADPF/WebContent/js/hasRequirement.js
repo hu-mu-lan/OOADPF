@@ -1,3 +1,5 @@
+var requirementNums = parseInt("0");
+
 function hasRequirement(){
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function(){
@@ -5,6 +7,7 @@ function hasRequirement(){
 	    	var result = xmlHttp.responseText;
 	    	if(result == "1"){
 	    		document.getElementById("requirement").classList.add("layui-btn-disabled");
+	    		requirementNums = requirementNums + 1;
 	    	}else{
 	    		document.getElementById("requirement").classList.remove("layui-btn-disabled");
 	    	}
@@ -12,4 +15,5 @@ function hasRequirement(){
 	}
 	xmlHttp.open("GET", "hasRequirement.do", true);            
 	xmlHttp.send();
+	return requirementNums;
 }
