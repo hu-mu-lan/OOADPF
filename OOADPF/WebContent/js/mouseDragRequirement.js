@@ -1,13 +1,12 @@
 var dragableElem = document.getElementsByName('dragableRequirement')[0];
-drag(dragableElem);
-
+drag3(dragableElem);
 
 var mouseOutLeft;
 var mouseOutTop;
 
 var laywindow3;
 
-function drag(elem) {
+function drag3(elem) {
     var disX,
         disY;
     
@@ -87,7 +86,7 @@ function newRequirementAjax(description, shortname, physicalproperty, domaintype
 	        //成功信息
 	    }
 	}
-	xmlHttp.open("GET", "newDomain.do?Description="+des+"&ShortName="+shn+"&top="+mouseOutTop+"&left="+mouseOutLeft+"&Property="+ppt+"&Type="+dmt, true);            
+	xmlHttp.open("GET", "newDomain.do?Description="+des+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
 	xmlHttp.send();
     layer.closeAll();
     

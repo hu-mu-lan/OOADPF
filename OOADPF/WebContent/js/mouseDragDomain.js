@@ -1,12 +1,12 @@
 var dragableElem = document.getElementsByName('dragableDomain')[0];
-drag(dragableElem);
+drag2(dragableElem);
 
 var mouseOutLeft;
 var mouseOutTop;
 
 var laywindow2;
 
-function drag(elem) {
+function drag2(elem) {
     var disX,
         disY;
     

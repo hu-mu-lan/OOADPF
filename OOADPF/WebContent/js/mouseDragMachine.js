@@ -1,5 +1,5 @@
 var dragableElem = document.getElementsByName('dragableMachine')[0];
-drag(dragableElem);
+drag1(dragableElem);
 
 
 var mouseOutLeft;
@@ -7,7 +7,7 @@ var mouseOutTop;
 
 var laywindow;
 
-function drag(elem) {
+function drag1(elem) {
     var disX,
         disY;
     

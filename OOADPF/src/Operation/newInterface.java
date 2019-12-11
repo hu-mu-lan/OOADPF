@@ -14,11 +14,16 @@ public class newInterface extends HttpServlet{
 		project item = (project)session.getAttribute("OneProject");
 		String originLoc = request.getParameter("origin");
 		String terminalLoc = request.getParameter("terminal");
+		String Phenomenons = request.getParameter("Phenomenons");
+		String[] PhenomenonsList = Phenomenons.split(";");
 		shape origin = item.Canvas.getSlist().get(Integer.parseInt(originLoc)-1);
 		shape terminal = item.Canvas.getSlist().get(Integer.parseInt(terminalLoc)-1);
 		String Type = request.getParameter("Type");
 		line Interface = new interFace(origin, terminal, Type);
 		item.Canvas.addLine(Interface);
+		for(String item2 : PhenomenonsList) {
+			Interface.displayAddPhonomenon(item2);
+		}
 		String tmp = String.valueOf(origin.getLeft()-37.5)+";"+String.valueOf(origin.getTop()+87.5)+";"+String.valueOf(terminal.getLeft()-37.5)+";"+String.valueOf(terminal.getTop()+87.5);
     	System.out.println(tmp);
 		PrintWriter out = response.getWriter();

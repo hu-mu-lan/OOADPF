@@ -3,7 +3,8 @@ package Canvas;
 public class machine extends shape {
 	public double top;
     public double left;
-    public String Shortname,Description;
+    public String Shortname;
+    public String Description;
 
     public machine(double top, double left,String shortname,String description) {
         this.top = top;
