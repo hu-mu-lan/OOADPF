@@ -31,7 +31,7 @@ function sendDescription(description){
     document.getElementById("new").setAttribute("href","javascript:return false;");
     document.getElementById("new").style.opacity = 0.2;
     layer.close(layer.index);
-    layer.msg('Succeed to creating a Project!');
+    layer.msg('Succeed to creating a Project!', {time: 500, icon:1});
     document.getElementById("DiagramDescription").innerHTML = "Description: " + des;
     document.getElementById("DiagramDescription").classList.add("layui-show");
 }

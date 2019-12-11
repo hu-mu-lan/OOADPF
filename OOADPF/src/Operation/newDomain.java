@@ -15,8 +15,8 @@ public class newDomain extends HttpServlet{
 		double top = Double.parseDouble(request.getParameter("top"));
 		String ShortName = request.getParameter("ShortName");
 		String Description = request.getParameter("Description");
-		double PropertyNum = Double.parseDouble(request.getParameter("Property"));
-		double TypeNum = Double.parseDouble(request.getParameter("Type"));
+		int PropertyNum = Integer.parseInt(request.getParameter("Property"));
+		int TypeNum = Integer.parseInt(request.getParameter("Type"));
 		String Property = null;
 		String Type = null;
 		if(PropertyNum == 1) {

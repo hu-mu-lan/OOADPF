@@ -32,11 +32,12 @@ function next(){
             document.getElementById("step"+Step+Period).style.backgroundColor = '#FFFF66';
         }else{
             if(checkOne()){
+                layer.msg('Context diagram ok!', {time: 1500, icon:1});
                 Step = 2;
                 Period = 1;
                 document.getElementById("step"+Step+Period).style.backgroundColor = '#FFFF66';
             }else{
-                window.alert("Something wrong in step one!");
+                layer.msg("Something wrong in step one!", {time: 3500, icon:2});
             }
         }
     }else{
@@ -45,7 +46,7 @@ function next(){
             document.getElementById("step"+Step+Period).style.backgroundColor = '#FFFF66';
         }else{
             if(checkTwo()){
-                window.alert("Complete!");
+            	layer.msg('Problem diagram ok!', {time: 1500, icon:1});
             }else{
                 window.alert("Something wrong in step two!");
             }
@@ -148,8 +149,7 @@ function backOperation(step, period){
 
 
 function checkOne(){
-    window.alert("此处应添加检查第1步函数！")
-    return true;
+    return (hasInterface() >= hasDomain() && hasMachine() >= 1 && hasInterface() >= 1);
 }
 
 function checkTwo(){

@@ -83,7 +83,7 @@ function newRequirementAjax(description){
 	        //成功信息
 	    }
 	}
-	xmlHttp.open("GET", "newDomain.do?Description="+des+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
+	xmlHttp.open("GET", "newRequirement.do?Description="+des+"&top="+mouseOutTop+"&left="+mouseOutLeft, true);            
 	xmlHttp.send();
     layer.closeAll();
     
