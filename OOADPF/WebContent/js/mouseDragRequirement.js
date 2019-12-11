@@ -68,19 +68,16 @@ function newRequirement(){
         ,id: 'newRequirement' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: ''
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newRequirementAjax(form.description)">submit</button></form></div>'
 		,success: function(layero){
             
         }
       });
 }
 
-function newRequirementAjax(description, shortname, physicalproperty, domaintype){
+function newRequirementAjax(description){
 	var xmlHttp = new XMLHttpRequest();
 	var des = description.value;
-    var shn = shortname.value;
-    var ppt = physicalproperty.value;
-    var dmt = domaintype.value;
 	xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	        //成功信息
