@@ -48,7 +48,7 @@ function next(){
             if(checkTwo()){
             	layer.msg('Problem diagram ok!', {time: 1500, icon:1});
             }else{
-                window.alert("Something wrong in step two!");
+            	layer.msg("Something wrong in step two!", {time: 3500, icon:2});
             }
         }
     }
@@ -153,5 +153,6 @@ function checkOne(){
 }
 
 function checkTwo(){
+	console.log("res"+hasRequirement());
     return (hasRequirement() == 1);
 }

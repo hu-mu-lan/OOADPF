@@ -1,6 +1,7 @@
 var requirementNums = parseInt("0");
 
 function hasRequirement(){
+	requirementNums = parseInt("0");
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
