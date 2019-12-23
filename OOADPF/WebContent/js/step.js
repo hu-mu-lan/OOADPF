@@ -75,7 +75,7 @@ function nextOperation(step, period){
     }else if(step == 2 && period == 1){
         document.getElementById("requirement").classList.remove("layui-btn-disabled");
         document.getElementById("requirement").classList.add("layui-btn-primary");
-        hasRequirement();
+//        hasRequirement();
     }else if(step == 2 && period == 2){
         document.getElementById("requirement").classList.remove("layui-btn-primary");
         document.getElementById("requirement").classList.add("layui-btn-disabled");
@@ -138,7 +138,7 @@ function backOperation(step, period){
         document.getElementById("reference").classList.add("layui-btn-disabled");
         document.getElementById("constraint").classList.remove("layui-btn-primary");
         document.getElementById("constraint").classList.add("layui-btn-disabled");
-        hasRequirement();
+//        hasRequirement();
     }else if(step == 2 && period == 2){
         document.getElementById("reference").classList.remove("layui-btn-disabled");
         document.getElementById("reference").classList.add("layui-btn-primary");
@@ -153,6 +153,7 @@ function checkOne(){
 }
 
 function checkTwo(){
-	console.log("res"+hasRequirement());
-    return (hasRequirement() == 1);
+//	console.log("res"+hasRequirement());
+//    return (hasRequirement() == 1);
+	return true;
 }

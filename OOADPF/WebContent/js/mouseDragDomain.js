@@ -47,13 +47,13 @@ function drag2(elem) {
             newDomain();
             document.onmouseup = null;
             
-            var myParent = document.getElementById("body"); 
-            var myImage = document.createElement("img");
-            myImage.src = "img/domainBigBack.png";
-            myParent.appendChild(myImage);
-            myImage.style.position = "absolute";
-            myImage.style.left = mouseOutLeft + "px";
-			myImage.style.top = mouseOutTop + "px";
+//            var myParent = document.getElementById("body"); 
+//            var myImage = document.createElement("img");
+//            myImage.src = "img/domainBigBack.png";
+//            myParent.appendChild(myImage);
+//            myImage.style.position = "absolute";
+//            myImage.style.left = mouseOutLeft + "px";
+//			myImage.style.top = mouseOutTop + "px";
         }
     }
 }
@@ -80,6 +80,7 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
     var shn = shortname.value;
     var ppt = physicalproperty.value;
     var dmt = domaintype.value;
+    console.log(dmt);
 	xmlHttp.onreadystatechange = function(){
 	    if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
 	        //成功信息
@@ -89,10 +90,51 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
 	xmlHttp.send();
     layer.closeAll();
     var myParent = document.getElementById("body"); 
+
+    
+    if(dmt == 1){
+        var myDomainType = document.createElement("b");
+        myParent.appendChild(myDomainType);
+        myDomainType.innerHTML = "C";
+        myDomainType.style.position = "absolute";
+        myDomainType.style.left = mouseOutLeft + 175 + "px";
+        myDomainType.style.top = mouseOutTop + 75 + "px";
+    }else if(dmt == 2){
+        var myDomainType = document.createElement("b");
+        myParent.appendChild(myDomainType);
+        myDomainType.innerHTML = "B";
+        myDomainType.style.position = "absolute";
+        myDomainType.style.left = mouseOutLeft + 175 + "px";
+        myDomainType.style.top = mouseOutTop + 75 + "px";
+    }else if(dmt == 3){
+        var myDomainType = document.createElement("b");
+        myParent.appendChild(myDomainType);
+        myDomainType.innerHTML = "X";
+        myDomainType.style.position = "absolute";
+        myDomainType.style.left = mouseOutLeft + 175 + "px";
+        myDomainType.style.top = mouseOutTop + 75 + "px";
+    }
+    
+    if(ppt == 1){
+        var myImage = document.createElement("img");
+        myImage.src = "img/givenDomainBigBack.png";
+        myParent.appendChild(myImage);
+        myImage.style.position = "absolute";
+        myImage.style.left = mouseOutLeft + "px";
+		myImage.style.top = mouseOutTop + "px";
+    }else if(ppt == 2){
+        var myImage = document.createElement("img");
+        myImage.src = "img/designDomainBigBack.png";
+        myParent.appendChild(myImage);
+        myImage.style.position = "absolute";
+        myImage.style.left = mouseOutLeft + "px";
+		myImage.style.top = mouseOutTop + "px";
+    }
     var myDomainName = document.createElement("b");
     myParent.appendChild(myDomainName);
     myDomainName.innerHTML = des;
     myDomainName.style.position = "absolute";
-    myDomainName.style.left = mouseOutLeft + 25 + "px";
+    myDomainName.style.left = mouseOutLeft + 30 + "px";
     myDomainName.style.top = mouseOutTop + 30 + "px";
+    
 }

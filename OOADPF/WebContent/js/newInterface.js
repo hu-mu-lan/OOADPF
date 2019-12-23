@@ -69,10 +69,33 @@ function newInterfaceAjax(initator, terminal, type){
 	    	cxt.lineTo(r4,r3);
 	    	cxt.stroke();
             
+            var innerans = getShapeByIndex(init) + " ! {";
+	    	var allPhenomenons = allPhenomenon.substring(0,allPhenomenon.length-1).split(";");
+            console.log(allPhenomenons);
+//            var allPheSingle = "";
+            for (var i=0;i<allPhenomenons.length;i++)
+            { 
+                var tmp = allPhenomenons[i].split("!")
+                console.log(tmp);
+                innerans = innerans + tmp[1] + ",";
+                console.log(tmp[1]);
+            }
+//            for (allPheSingle in allPhenomenons){
+//                console.log(allPheSingle);
+//                var tmp = allPheSingle.split("!")
+//                console.log(tmp);
+//                innerans = innerans + tmp[1] + ",";
+//                console.log(tmp[1]);
+//            }
+            console.log(innerans);
+	    	innerans = innerans.substring(0,innerans.length-1);
+            console.log(innerans);
+            innerans = innerans + "}";
+	    	console.log(innerans);
             var myParent = document.getElementById("body"); 
             var myInterfaceName = document.createElement("b");
             myParent.appendChild(myInterfaceName);
-            myInterfaceName.innerHTML = allPhenomenon.substring(0,allPhenomenon.length-1);
+            myInterfaceName.innerHTML = innerans;
             myInterfaceName.style.position = "absolute";
             myInterfaceName.style.left = ((r2 + r4) / 2) + "px";
             myInterfaceName.style.top = ((r1 + r3) / 2) + 60 + "px";
