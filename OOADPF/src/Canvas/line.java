@@ -12,4 +12,5 @@ public class line{
 	public String getType() {return type;}
 	public shape getOrigin() {return origin;}
 	public shape getTerminal() {return terminal;}
+	public phenomenon getPhenomenon() {return Phenomenon;}
 }

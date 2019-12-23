@@ -149,11 +149,9 @@ function backOperation(step, period){
 
 
 function checkOne(){
-    return (hasInterface() >= hasDomain() && hasMachine() == 1 && hasInterface() >= 1);
+	return ((hasSingleShape() == 0)&&(atLeastOnePhe() == 1)&&(hasMachine() == 1));
 }
 
 function checkTwo(){
-//	console.log("res"+hasRequirement());
-//    return (hasRequirement() == 1);
-	return true;
+	return ((hasSingleShape() == 0)&&(atLeastOnePhe() == 1)&&(hasRequirement() >= 1)&&(hasConstraint() >= 1));
 }

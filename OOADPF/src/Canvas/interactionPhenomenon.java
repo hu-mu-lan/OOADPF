@@ -21,4 +21,8 @@ public class interactionPhenomenon implements phenomenon{
 	public ArrayList<String> getPlist(){
 		return pList;
 	}
+	
+	public boolean isempty() {
+		return pList.isEmpty();
+	}
 }

@@ -71,12 +71,21 @@ function newMachine(){
         ,id: 'newMachine' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="newMachineAjax(form.description, form.shortname)">submit</button></form></div>'
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="Description" class="layui-input"></input><br><b>ShortName:</b><br><input type="text" name="shortname" id="shortname" lay-verify="title" autocomplete="off" placeholder="ShortName" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="checkHasM(form.description, form.shortname)">submit</button></form></div>'
         ,success: function(layero){
         	
         }
       });
 }
+
+function checkHasM(description, shortname){
+    if(description.value.length == 0 || shortname.value.length == 0){
+        layer.msg('Please Input!', {time: 800, icon:2});
+    }else{
+    	newMachineAjax(description, shortname);
+    }
+}
+
 
 function newMachineAjax(description, shortname){
 	var xmlHttp = new XMLHttpRequest();

@@ -26,4 +26,8 @@ public class conInteractionPhenomenon implements phenomenon{
 	public ArrayList<String> getPlist(){
 		return pList;
 	}
+	
+	public boolean isempty() {
+		return pList.isEmpty();
+	}
 }
