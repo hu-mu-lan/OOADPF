@@ -55,8 +55,8 @@ function drag1(elem) {
             myImage.style.position = "absolute";
             myImage.style.left = mouseOutLeft + "px";
 			myImage.style.top = mouseOutTop + "px";
-
-            
+            myImage.id = "machine" + shapeNum;
+            myImage.ondblclick = function(){machineRevise(this.id);};
         }
     }
 }
@@ -106,4 +106,6 @@ function newMachineAjax(description, shortname){
     myMachineName.style.position = "absolute";
     myMachineName.style.left = mouseOutLeft + 50 + "px";
     myMachineName.style.top = mouseOutTop + 30 + "px";
+    myMachineName.id = "machineName" + shapeNum;
+    shapeNum = shapeNum + 1;
 }

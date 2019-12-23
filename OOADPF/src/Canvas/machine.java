@@ -36,5 +36,13 @@ public class machine extends shape {
         return this.Shortname;
     }
 
+	public void setShortname(String shortname) {
+		Shortname = shortname;
+	}
+
+	public void setDescription(String description) {
+		Description = description;
+	}
+
 
 }
