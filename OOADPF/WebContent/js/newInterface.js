@@ -35,12 +35,13 @@ function removePhenomenon(init, phe){
     var pheLists = allPhenomenon.split(";");
 	console.log(removePhe);
     allPhenomenon = "";
-    for(var i = 0; i < pheLists.length; i++){
+    for(var i = pheLists.length - 1; i >= 0; i--){
         if(pheLists[i] == ""){
             continue;
         }else{
             if(pheLists[i] == removePhe){
                 myParent.removeChild(myParent.childNodes[i + allpheNums + 3]);
+                break;
             }else{
                 allPhenomenon = allPhenomenon + pheLists[i];
             }

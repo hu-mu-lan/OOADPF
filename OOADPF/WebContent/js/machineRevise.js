@@ -1,7 +1,7 @@
 var reviseNum = parseInt("0");
 
 function machineRevise(id){
-    reviseNum = id;
+    reviseNum = parseInt(id.substring(7));
     console.log(reviseNum);
     laywindow = layer.open({
         type: 1
@@ -38,7 +38,7 @@ function machineReviseAjax(Description, Shortname){
 	}
 	xmlHttp.open("GET", "reviseMachine.do?Description="+Description+"&ShortName="+Shortname+"&Id="+reviseNum, false);            
 	xmlHttp.send();
-    var reviseName = document.getElementById("machineName" + reviseNum.substring(7));
+    var reviseName = document.getElementById("machineName" + reviseNum);
     reviseName.innerHTML = Description;
     layer.closeAll();
 }

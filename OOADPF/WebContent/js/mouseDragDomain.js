@@ -107,6 +107,7 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
         myDomainType.style.position = "absolute";
         myDomainType.style.left = mouseOutLeft + 175 + "px";
         myDomainType.style.top = mouseOutTop + 75 + "px";
+        myDomainType.id = "domainType" + shapeNum;
     }else if(dmt == 2){
         var myDomainType = document.createElement("b");
         myParent.appendChild(myDomainType);
@@ -114,6 +115,7 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
         myDomainType.style.position = "absolute";
         myDomainType.style.left = mouseOutLeft + 175 + "px";
         myDomainType.style.top = mouseOutTop + 75 + "px";
+        myDomainType.id = "domainType" + shapeNum;
     }else if(dmt == 3){
         var myDomainType = document.createElement("b");
         myParent.appendChild(myDomainType);
@@ -121,6 +123,7 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
         myDomainType.style.position = "absolute";
         myDomainType.style.left = mouseOutLeft + 175 + "px";
         myDomainType.style.top = mouseOutTop + 75 + "px";
+        myDomainType.id = "domainType" + shapeNum;
     }
     
     if(ppt == 1){
@@ -130,6 +133,8 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
         myImage.style.position = "absolute";
         myImage.style.left = mouseOutLeft + "px";
 		myImage.style.top = mouseOutTop + "px";
+		myImage.id = "domain" + shapeNum;
+        myImage.ondblclick = function(){domainRevise(this.id);};
     }else if(ppt == 2){
         var myImage = document.createElement("img");
         myImage.src = "img/designDomainBigBack.png";
@@ -137,6 +142,8 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
         myImage.style.position = "absolute";
         myImage.style.left = mouseOutLeft + "px";
 		myImage.style.top = mouseOutTop + "px";
+		myImage.id = "domain" + shapeNum;
+		myImage.ondblclick = function(){domainRevise(this.id);};
     }
     var myDomainName = document.createElement("b");
     myParent.appendChild(myDomainName);
@@ -144,5 +151,5 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
     myDomainName.style.position = "absolute";
     myDomainName.style.left = mouseOutLeft + 30 + "px";
     myDomainName.style.top = mouseOutTop + 30 + "px";
-    
+    myDomainName.id = "domainName" + shapeNum;
 }

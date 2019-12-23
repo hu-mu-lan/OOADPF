@@ -14,7 +14,7 @@ public class reviseMachine extends HttpServlet{
 		String Id = request.getParameter("Id");
 		String ShortName = request.getParameter("ShortName");
 		String Description = request.getParameter("Description");
-		machine objectMachine = (machine)item.Canvas.getSlist().get(Integer.parseInt(Id.substring(7)));
+		machine objectMachine = (machine)item.Canvas.getSlist().get(Integer.parseInt(Id));
 		objectMachine.setShortname(ShortName);
 		objectMachine.setDescription(Description);
 	}
