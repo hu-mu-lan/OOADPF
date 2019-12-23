@@ -105,4 +105,5 @@ function newRequirementAjax(description){
     myRequirementName.style.left = mouseOutLeft + 40 + "px";
     myRequirementName.style.top = mouseOutTop + 30 + "px";
     myRequirementName.id = "requirementName" + shapeNum;
+    shapeNum = shapeNum + 1;
 }

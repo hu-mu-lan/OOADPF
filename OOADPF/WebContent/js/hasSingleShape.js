@@ -1,6 +1,6 @@
 var hasNum = parseInt("0");
 
-function hasSingleShape(){
+function HasSingleShape(){
 	hasNum = parseInt("0");
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function(){
@@ -13,7 +13,7 @@ function hasSingleShape(){
 	    	}
 	    }
 	}
-	xmlHttp.open("GET", "hasSingleShape.do", false);            
+	xmlHttp.open("GET", "HasSingleShape.do", false);            
 	xmlHttp.send();
 	return hasNum;
 }

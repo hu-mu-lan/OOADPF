@@ -11,15 +11,15 @@ function requirementRevise(id){
         ,id: 'reviseRequirement' //设定一个id，防止重复弹出
         ,btnAlign: 'c'
         ,moveType: 1 //拖拽模式，0或者1
-        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="newDescription" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="checkHasR(form.description)">submit</button></form></div>'
+        ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;"><form><b>Description:</b><br><input type="text" name="description" id="description" lay-verify="title" autocomplete="off" placeholder="newDescription" class="layui-input"></input><br><button type="button" class="layui-btn layui-btn-fluid" onclick="checkHasRR(form.description)">submit</button></form></div>'
 		,success: function(layero){
             
         }
       });
 }
 
-function checkHasRR(description, shortname){
-    if(description.value.length == 0 || shortname.value.length == 0){
+function checkHasRR(description){
+    if(description.value.length == 0){
         layer.msg('Please Input!', {time: 800, icon:2});
     }else{
     	requirementReviseAjax(description.value);

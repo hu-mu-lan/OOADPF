@@ -152,4 +152,5 @@ function newDomainAjax(description, shortname, physicalproperty, domaintype){
     myDomainName.style.left = mouseOutLeft + 30 + "px";
     myDomainName.style.top = mouseOutTop + 30 + "px";
     myDomainName.id = "domainName" + shapeNum;
+    shapeNum = shapeNum + 1;
 }

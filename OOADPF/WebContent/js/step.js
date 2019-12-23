@@ -149,9 +149,9 @@ function backOperation(step, period){
 
 
 function checkOne(){
-	return ((hasSingleShape() == 0)&&(atLeastOnePhe() == 1)&&(hasMachine() == 1));
+	return ((HasSingleShape() == 0)&&(AtLeastOnePhe() == 1)&&(hasMachine() == 1));
 }
 
 function checkTwo(){
-	return ((hasSingleShape() == 0)&&(atLeastOnePhe() == 1)&&(hasRequirement() >= 1)&&(hasConstraint() >= 1));
+	return ((HasSingleShape() == 0)&&(AtLeastOnePhe() == 1)&&(hasRequirement() >= 1)&&(hasConstraint() >= 1));
 }

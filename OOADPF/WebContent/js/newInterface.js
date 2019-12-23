@@ -27,26 +27,29 @@ function addPhenomenon(init, phe){
     myNewPhe.id = getShapeByIndex(init.value) + "!" + phe.value;
     myNewPhe.classList.add("layui-colla-content");
     myNewPhe.classList.add("layui-show");
+    console.log(allPhenomenon);
 }
 
 function removePhenomenon(init, phe){
     var removePhe =  getShapeByIndex(init.value) + "!" + phe.value;
     var myParent = document.getElementById("IndexPhe"); 
     var pheLists = allPhenomenon.split(";");
+    var deleted = false;
 	console.log(removePhe);
     allPhenomenon = "";
     for(var i = pheLists.length - 1; i >= 0; i--){
         if(pheLists[i] == ""){
             continue;
         }else{
-            if(pheLists[i] == removePhe){
+            if(pheLists[i] == removePhe && !deleted){
                 myParent.removeChild(myParent.childNodes[i + allpheNums + 3]);
-                break;
+                deleted = true;
             }else{
-                allPhenomenon = allPhenomenon + pheLists[i];
+                allPhenomenon = allPhenomenon + pheLists[i] + ";";
             }
         }
     }
+    console.log(allPhenomenon);
 }
 
 
@@ -73,7 +76,6 @@ function newInterfaceAjax(initator, terminal, type){
             var innerans = getShapeByIndex(init) + " ! {";
 	    	var allPhenomenons = allPhenomenon.substring(0,allPhenomenon.length-1).split(";");
             console.log(allPhenomenons);
-//            var allPheSingle = "";
             for (var i=0;i<allPhenomenons.length;i++)
             { 
                 var tmp = allPhenomenons[i].split("!")
@@ -81,13 +83,6 @@ function newInterfaceAjax(initator, terminal, type){
                 innerans = innerans + tmp[1] + ",";
                 console.log(tmp[1]);
             }
-//            for (allPheSingle in allPhenomenons){
-//                console.log(allPheSingle);
-//                var tmp = allPheSingle.split("!")
-//                console.log(tmp);
-//                innerans = innerans + tmp[1] + ",";
-//                console.log(tmp[1]);
-//            }
             console.log(innerans);
 	    	innerans = innerans.substring(0,innerans.length-1);
             console.log(innerans);

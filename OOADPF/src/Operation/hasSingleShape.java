@@ -8,7 +8,7 @@ import java.util.HashSet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
-@WebServlet(urlPatterns={"/hasSingleShape.do"})
+@WebServlet(urlPatterns={"/HasSingleShape.do"})
 public class hasSingleShape extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();

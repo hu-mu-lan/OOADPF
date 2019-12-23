@@ -14,7 +14,7 @@ function hasRequirement(){
 	    	}
 	    }
 	}
-	xmlHttp.open("GET", "hasRequirement.do", true);            
+	xmlHttp.open("GET", "hasRequirement.do", false);            
 	xmlHttp.send();
 	return requirementNums;
 }

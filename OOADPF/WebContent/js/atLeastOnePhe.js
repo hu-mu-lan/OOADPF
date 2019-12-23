@@ -1,6 +1,6 @@
 var hasPhe = parseInt("0");
 
-function atLeastOnePhe(){
+function AtLeastOnePhe(){
 	hasPhe = parseInt("0");
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function(){
@@ -13,7 +13,7 @@ function atLeastOnePhe(){
 	    	}
 	    }
 	}
-	xmlHttp.open("GET", "atLeastOnePhe.do", false);            
+	xmlHttp.open("GET", "AtLeastOnePhe.do", false);            
 	xmlHttp.send();
 	return hasPhe
 }

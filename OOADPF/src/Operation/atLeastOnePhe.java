@@ -8,7 +8,7 @@ import java.util.HashSet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
-@WebServlet(urlPatterns={"/atLeastOnePhe.do"})
+@WebServlet(urlPatterns={"/AtLeastOnePhe.do"})
 public class atLeastOnePhe extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();

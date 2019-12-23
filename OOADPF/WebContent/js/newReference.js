@@ -42,7 +42,7 @@ function removePhenomenonR(init, phe){
             if(pheLists[i] == removePhe){
                 myParent.removeChild(myParent.childNodes[i + allpheNumsR + 3]);
             }else{
-                allPhenomenonR = allPhenomenonR + pheLists[i];
+                allPhenomenonR = allPhenomenonR + pheLists[i] + ";";
             }
         }
     }
@@ -72,11 +72,28 @@ function newReferenceAjax(initator, terminal, type){
 	    	cxt.stroke();
 	    	cxt.setLineDash([]);
 	    	cxt.closePath();
+	    	
+            var innerans = getShapeByIndex(init) + " ! {";
+	    	var allPhenomenonsR = allPhenomenonR.substring(0,allPhenomenonR.length-1).split(";");
+            console.log(allPhenomenonsR);
+            for (var i=0;i<allPhenomenonsR.length;i++)
+            { 
+                var tmp = allPhenomenonsR[i].split("!")
+                console.log(tmp);
+                innerans = innerans + tmp[1] + ",";
+                console.log(tmp[1]);
+            }
+            console.log(innerans);
+	    	innerans = innerans.substring(0,innerans.length-1);
+            console.log(innerans);
+            innerans = innerans + "}";
+	    	console.log(innerans);
+	    	
             var myParent = document.getElementById("body"); 
             var myReferenceName = document.createElement("b");
             myParent.appendChild(myReferenceName);
             console.log(allPhenomenonR.length-1);
-            myReferenceName.innerHTML = allPhenomenonR.substring(0,allPhenomenonR.length-1);
+            myReferenceName.innerHTML = innerans;
             myReferenceName.style.position = "absolute";
             myReferenceName.style.left = ((r2 + r4) / 2) + "px";
             myReferenceName.style.top = ((r1 + r3) / 2) + 60 + "px";

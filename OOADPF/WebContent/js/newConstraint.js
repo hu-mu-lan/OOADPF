@@ -42,7 +42,7 @@ function removePhenomenonR(init, phe){
             if(pheLists[i] == removePhe){
                 myParent.removeChild(myParent.childNodes[i + allpheNumsR + 3]);
             }else{
-                allPhenomenonC = allPhenomenonC + pheLists[i];
+                allPhenomenonC = allPhenomenonC + pheLists[i] + ";";
             }
         }
     }
@@ -73,11 +73,28 @@ function newConstraintAjax(initator, terminal, type, isConstraint){
 	    	cxt.stroke();
 	    	cxt.setLineDash([]);
 	    	cxt.closePath();
+	    	
+            var innerans = getShapeByIndex(init) + " ! {";
+	    	var allPhenomenonsC = allPhenomenonC.substring(0,allPhenomenonC.length-1).split(";");
+            console.log(allPhenomenonsC);
+            for (var i=0;i<allPhenomenonsC.length;i++)
+            { 
+                var tmp = allPhenomenonsC[i].split("!")
+                console.log(tmp);
+                innerans = innerans + tmp[1] + ",";
+                console.log(tmp[1]);
+            }
+            console.log(innerans);
+	    	innerans = innerans.substring(0,innerans.length-1);
+            console.log(innerans);
+            innerans = innerans + "}";
+	    	console.log(innerans);
+	    	
             var myParent = document.getElementById("body"); 
             var myConstraintName = document.createElement("b");
             myParent.appendChild(myConstraintName);
             console.log(allPhenomenonC.length-1);
-            myConstraintName.innerHTML = "(Constraint)" + allPhenomenonC.substring(0,allPhenomenonC.length-1);
+            myConstraintName.innerHTML = "(Constraint)" + innerans;
             myConstraintName.style.position = "absolute";
             myConstraintName.style.left = ((r2 + r4) / 2) + "px";
             myConstraintName.style.top = ((r1 + r3) / 2) + 60 + "px";
