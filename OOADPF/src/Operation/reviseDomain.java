@@ -34,6 +34,5 @@ public class reviseDomain extends HttpServlet{
 			Type = "Lexical";
 		}
 		objectDomain.editInfo(ShortName, Description, Property, Type);
-		System.out.println(ShortName + Description + Property + Type);
 	}
 }

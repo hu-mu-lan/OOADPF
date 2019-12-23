@@ -3,7 +3,7 @@ var reviseNum = parseInt("0");
 function machineRevise(id){
     reviseNum = parseInt(id.substring(7));
     console.log(reviseNum);
-    laywindow = layer.open({
+    laywindow11 = layer.open({
         type: 1
         ,title: 'Revise Machine'
         ,closeBtn: 1

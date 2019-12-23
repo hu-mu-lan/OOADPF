@@ -55,6 +55,8 @@ function drag3(elem) {
             myImage.style.position = "absolute";
             myImage.style.left = mouseOutLeft + "px";
 			myImage.style.top = mouseOutTop + "px";
+			myImage.id = "requirement" + shapeNum;
+			myImage.ondblclick = function(){requirementRevise(this.id);};
         }
     }
 }
@@ -102,4 +104,5 @@ function newRequirementAjax(description){
     myRequirementName.style.position = "absolute";
     myRequirementName.style.left = mouseOutLeft + 40 + "px";
     myRequirementName.style.top = mouseOutTop + 30 + "px";
+    myRequirementName.id = "requirementName" + shapeNum;
 }

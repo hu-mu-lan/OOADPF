@@ -1,11 +1,8 @@
 var reviseNumD = parseInt("0");
 
 function domainRevise(id){
-	console.log(id);
     reviseNumD = id.substring(6);
-    console.log(id.substring(6));
-    console.log(reviseNumD);
-    laywindow2 = layer.open({
+    laywindow12 = layer.open({
         type: 1
         ,title: 'Revise Domain'
         ,closeBtn: 1
